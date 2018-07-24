@@ -1,0 +1,25 @@
+<div style="text-align:center">
+  <h1>
+    Google Maps - API test
+  </h1>
+
+</div>
+<h2> Google Map Local suggestions </h2>
+
+<!-- Input -->
+<div class="form-group">
+  <input type="text" placeholder="Search for Location" autocorrect="off" autocapitalize="off" spellcheck="off" class="inputSize form-control" #search>
+</div>
+
+<!-- Botão-->
+<div [ngClass]="{'is-open':isOpen}">
+<button  class="btn-trafficLayer" (click)="onClick()" [ngClass]="{'is-open':isOpen}">Traffic Layer</button>
+</div>
+<!-- Mapa -->
+<div id="map" #map></div>
+ <!-- <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" (mapClick)="onChoseLocation($event)">
+  <agm-marker 
+  [latitude]="latitude" 
+  [longitude]="longitude" 
+  *ngIf="locationChosen"></agm-marker>
+</agm-map>  -->

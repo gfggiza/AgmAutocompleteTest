@@ -1,0 +1,23 @@
+#map{
+    height:500px;
+}
+.inputSize{
+    margin: 15px 0px;
+    border-radius: 9px;
+    width: 30vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2em;
+}
+.btn-trafficLayer{
+    padding:10px 20px;
+    border-radius: 15px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    margin-bottom:1.5%;
+    background-color: rgb(148, 228, 248);
+    cursor: pointer;
+}
