@@ -4,11 +4,8 @@ Code with Working Angular Google Maps with Auto Complete for Ng2
 
 
   <h2>
-    Look For 
-  </h2> <br/>
- 
-<h3>All inside  ngOnInit()</h3>
-  
+    Look For All inside  ngOnInit()
+  </h2>  
   
 <h4> <strong>General Search and POI</strong> </h4>
 <div style="brackground:gray;padding:20px;">
