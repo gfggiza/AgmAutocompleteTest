@@ -1,28 +1,74 @@
-# MyAppGoogleMapAPITest
+<h1>Angular Google Maps - Auto Complete for Ng2</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+Code with Working Angular Google Maps with Auto Complete for Ng2
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+  <h2>
+    Look For 
+  </h2> <br/>
+ 
+  All inside  ngOnInit()
+  
+<div style="brackground:gray;padding:20px;">
 
-## Code scaffolding
+        //General Search and POI
+        var autocomplete = new google.maps.places.SearchBox(this.searchElement.nativeElement);
+        
+          // Bias the SearchBox results towards current map's viewport.
+          map.addListener('bounds_changed', function() {
+            autocomplete.setBounds(map.getBounds());
+          });
+          
+          var markers = [];
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+        autocomplete.addListener("places_changed", () => {
+          this.ngZone.run(() => {
+            
+            let places: google.maps.places.PlaceResult[] = autocomplete.getPlaces();
+                      
+              if(places.length == 0){
+                return;
+              }
+</div><br/>
+<div style="brackground:gray;padding:20px;">
+        
+              // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
 
-## Build
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+</div><br/>
+<div style="brackground:gray;padding:20px;">
+  
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# AgmAutocompleteTest
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+        
+</div><br/>
+  
