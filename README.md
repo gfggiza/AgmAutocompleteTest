@@ -7,13 +7,12 @@ Code with Working Angular Google Maps with Auto Complete for Ng2
     Look For 
   </h2> <br/>
  
-  All inside  ngOnInit()
+<h3>All inside  ngOnInit()</h3>
   
-<div style="brackground:#e1e1e1;padding:20px;">
-
+  
 <h4> <strong>General Search and POI</strong> </h4>
-<br/>
-        
+<div style="brackground:#e1e1e1;padding:20px;">
+  
         var autocomplete = new google.maps.places.SearchBox(this.searchElement.nativeElement);
         
           // Bias the SearchBox results towards current map's viewport.
@@ -32,19 +31,23 @@ Code with Working Angular Google Maps with Auto Complete for Ng2
                 return;
               }
 </div><br/>
-<div style="brackground:#e1e1e1;padding:20px;">
+
         
              
 <h4> <strong>Clear out the old markers</strong> </h4>
-<br/>
+
+<div style="brackground:#e1e1e1;padding:20px;">
+  
           markers.forEach(function(marker) {
             marker.setMap(null);
           });
           markers = [];
-
+</div><br/>
   
 <h4> <strong>For each place, get the icon, name and location.</strong> </h4>
-<br/>
+
+<div style="brackground:#e1e1e1;padding:20px;">
+  
           var bounds = new google.maps.LatLngBounds();
           places.forEach(function(place) {
             if (!place.geometry) {
@@ -59,10 +62,10 @@ Code with Working Angular Google Maps with Auto Complete for Ng2
               scaledSize: new google.maps.Size(25, 25)
             };
 </div><br/>
-<div style="brackground:#e1e1e1;padding:20px;">
   
 <h4> <strong>Create a marker for each place</strong> </h4>
-<br/>
+
+<div style="brackground:#e1e1e1;padding:20px;">
             markers.push(new google.maps.Marker({
               map: map,
               icon: icon,
@@ -76,6 +79,5 @@ Code with Working Angular Google Maps with Auto Complete for Ng2
             } else {
               bounds.extend(place.geometry.location);
             }
-        
 </div><br/>
   
