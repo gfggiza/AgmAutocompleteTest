@@ -11,8 +11,8 @@ Code with Working Angular Google Maps with Auto Complete for Ng2
   
 <div style="brackground:#e1e1e1;padding:20px;">
 
-        <h4> <strong>General Search and POI</strong> </h4>
-        <br/>
+<h4> <strong>General Search and POI</strong> </h4>
+<br/>
         
         var autocomplete = new google.maps.places.SearchBox(this.searchElement.nativeElement);
         
@@ -35,16 +35,16 @@ Code with Working Angular Google Maps with Auto Complete for Ng2
 <div style="brackground:#e1e1e1;padding:20px;">
         
              
-              <h4> <strong>Clear out the old markers</strong> </h4>
-        <br/>
+<h4> <strong>Clear out the old markers</strong> </h4>
+<br/>
           markers.forEach(function(marker) {
             marker.setMap(null);
           });
           markers = [];
 
   
-           <h4> <strong>For each place, get the icon, name and location.</strong> </h4>
-        <br/>
+<h4> <strong>For each place, get the icon, name and location.</strong> </h4>
+<br/>
           var bounds = new google.maps.LatLngBounds();
           places.forEach(function(place) {
             if (!place.geometry) {
@@ -61,8 +61,8 @@ Code with Working Angular Google Maps with Auto Complete for Ng2
 </div><br/>
 <div style="brackground:#e1e1e1;padding:20px;">
   
-            <h4> <strong>Create a marker for each place</strong> </h4>
-        <br/>
+<h4> <strong>Create a marker for each place</strong> </h4>
+<br/>
             markers.push(new google.maps.Marker({
               map: map,
               icon: icon,
