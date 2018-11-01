@@ -64,7 +64,8 @@ Code with Working Angular Google Maps with Auto Complete for Ng2
 <h4> <strong>Create a marker for each place</strong> </h4>
 
 <div style="brackground:gray;padding:20px;">
-            markers.push(new google.maps.Marker({
+  
+              markers.push(new google.maps.Marker({
               map: map,
               icon: icon,
               title: place.name,
